@@ -7,6 +7,7 @@ import ChildComponent2 from './03/ChildComponent2';
 import BooleanComponent from './03/BooleanComponent';
 import DefaultPropsComponent from './03/DefaultPropsComponent';
 import ChildProperty from './03/ChildProperty';
+import StateExample from './03/StateExample';
 
 class App extends React.Component {
     render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
 
         return (
             <div className="body">
+                <h1>컴포넌트 및 프로퍼티</h1>
                 <TodaysPlan />
                 <MyComponent
                     name="문자열 프로퍼티"
@@ -48,6 +50,8 @@ class App extends React.Component {
                         <span>자식노드</span>
                     </div>
                 </ChildProperty>
+                <h1>상태관리</h1>
+                <StateExample />
             </div>
         )
     }

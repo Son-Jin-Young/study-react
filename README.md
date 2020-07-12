@@ -75,3 +75,11 @@ MyComponent.defaultProps = {
 
 export default Mycomponent;
 ```
+
+## 상태관리
+* 값을 저장하거나 변경할 수 있는 객체
+* `this.state` 를 이용하여 데이터 초기화 및 변경
+* 주의사항
+    * 생성자에서 `반드시 초기화`
+    * state를 변경할 때엔 `setState() 함수`를 사용하여야 한다.
+    * setState() 함수는 `비동기로 처리`, 이후 연결된 함수의 실행 종료 후 동기화 된다.
