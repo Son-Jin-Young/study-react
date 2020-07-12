@@ -49,7 +49,22 @@ class MyComponent extends React.Component {
     }
 }
 ```
-* 단방향 데이터 바인딩이다.
+* 프로퍼티 자료형 선언
+    > 프로퍼티에 해당 자료형을 제외한 다른 값이 들어올 때 리액트 엔진이 경고 메시지로 알려준다.
+```jsx harmony
+import PropTypes from 'prop-types';
 
+class MyComponent extends React.Component {
+    render() {
+        const name = this.props.name;
+        return <span>{name}</span>;
+    }
+}
 
+MyComponent.propTypes = {
+    name: PropTypes.string
+};
+
+export default Mycomponent;
+```
 
