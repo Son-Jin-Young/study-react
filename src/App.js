@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
+import TodaysPlan from './03/todaysPlan';
+import MyComponent from './03/MyComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <h1 className="title">두잇! 리액트 시작하기</h1>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return (
+            <div className="body">
+                <TodaysPlan />
+                <MyComponent name="손진영"/>
+            </div>
+        )
+    }
 }
 
 export default App;
+
