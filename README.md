@@ -49,9 +49,12 @@ class MyComponent extends React.Component {
     }
 }
 ```
-* 프로퍼티 자료형 선언
-    > 프로퍼티에 해당 자료형을 제외한 다른 값이 들어올 때 리액트 엔진이 경고 메시지로 알려준다.
+* 프로퍼티 자료형 및 기본값 선언
+    > 프로퍼티에 해당 자료형을 제외한 다른 값이 들어올 때 리액트 엔진이 경고 메시지로 알려준다.<br>
+    boolean 프로퍼티는 프로퍼티 사용 여부로 true / false를 정할 수 있다.<br>
+    내부에 사용자 정의 템플릿을 적용할 때, `this.props.children`을 사용한다.
 ```jsx harmony
+import React from 'react';
 import PropTypes from 'prop-types';
 
 class MyComponent extends React.Component {
@@ -61,10 +64,14 @@ class MyComponent extends React.Component {
     }
 }
 
+// 프로퍼티 타입 및 필수 선언
 MyComponent.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string.isRequired
+};
+// 프로퍼티 기본값 선언
+MyComponent.defaultProps = {
+    name: ''    
 };
 
 export default Mycomponent;
 ```
-
