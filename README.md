@@ -76,7 +76,7 @@ MyComponent.defaultProps = {
 export default Mycomponent;
 ```
 
-## 상태관리
+## 상태관리 - this.state
 * 값을 저장하거나 변경할 수 있는 객체
 * `this.state` 를 이용하여 데이터 초기화 및 변경
 * 주의사항
@@ -85,3 +85,7 @@ export default Mycomponent;
         * state를 직접 변경하는 경우, 리액트 엔진은 render 함수를 호출하지 않아, setState를 호출하여 리액트 엔진이 알아서 render 함수를 호출한다.
     * setState() 함수는 `비동기로 처리`, 이후 연결된 함수의 실행 종료 후 동기화 된다.
 * <span style="color: red;">생성자에서 비동기 함수 호출시, 내부에서 상태를 바꾸는 경우, 콘솔 오류 발생</span>
+
+## 상태관리 - forceUpdate()
+* this.setState와 동일한 동작을 한다.
+* 단, 리액트 `성능에 제약`이 있으므로 새롭게 뜨는 화면이 아니라면 사용을 `지양`한다.

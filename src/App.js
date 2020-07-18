@@ -8,6 +8,7 @@ import BooleanComponent from './03/BooleanComponent';
 import DefaultPropsComponent from './03/DefaultPropsComponent';
 import ChildProperty from './03/ChildProperty';
 import StateExample from './03/StateExample';
+import ForceUpdateExample from './03/ForceUpdateExample';
 
 class App extends React.Component {
     render() {
@@ -52,6 +53,7 @@ class App extends React.Component {
                 </ChildProperty>
                 <h1>상태관리</h1>
                 <StateExample />
+                <ForceUpdateExample />
             </div>
         )
     }
