@@ -82,4 +82,6 @@ export default Mycomponent;
 * 주의사항
     * 생성자에서 `반드시 초기화`
     * state를 변경할 때엔 `setState() 함수`를 사용하여야 한다.
+        * state를 직접 변경하는 경우, 리액트 엔진은 render 함수를 호출하지 않아, setState를 호출하여 리액트 엔진이 알아서 render 함수를 호출한다.
     * setState() 함수는 `비동기로 처리`, 이후 연결된 함수의 실행 종료 후 동기화 된다.
+* <span style="color: red;">생성자에서 비동기 함수 호출시, 내부에서 상태를 바꾸는 경우, 콘솔 오류 발생</span>
