@@ -92,19 +92,13 @@ export default Mycomponent;
 * 단, 리액트 `성능에 제약`이 있으므로 새롭게 뜨는 화면이 아니라면 사용을 `지양`한다.
 
 ## 컴포넌트 생명 주기
-* constructor(props)
-    * 최초 생성될 때 한번 실행
-    * `변수` 또는 `상태` 선언
-* render
-    * 데이터가 변경되어 새화면을 그려야 할 때 자동으로 호출
-    * 반환하는 JSX 화면을 그림
-* static getDerivedStateFormProps(props, state)
-    * 주로 `prop으로 전달되는 값을 state로 연동`해 줄 때, 주로 사용
-* componentDidMount
-    * render 함수가 종료된 후 호출되는 함수
-    * 즉 렌더링이 완료된 후 작업을 실행하는 함수
-* shouldComponentUpdate(nextProps, nextState)
-    * 화면을 `새로 출력해야하는지 판단`하는 함수
-    * 데이터를 비교하는 작업이 포함되므로, `리액트 성능에 영향을 많이 줌`
-    * `검증 작업`할 때 주로 사용
-    * forceUpdate를 호출하는 경우 실행되지 않음
+|생명주기 함수|설명|
+|--|--|
+|constructor(props)|<ul><li>최초 생성될 때 한번 실행</li><li>`변수` 또는 `상태` 선언</li></ul>|
+|render|<ul><li>데이터가 변경되어 새화면을 그려야 할 때 자동으로 호출</li><li>반환하는 JSX 화면을 그림</li></ul>|
+|static getDerivedStateFormProps(props, state)|주로 `prop으로 전달되는 값을 state로 연동`해 줄 때, 주로 사용|
+|componentDidMount|<ul><li>render 함수가 종료된 후 호출되는 함수</li><li>즉 렌더링이 완료된 후 작업을 실행하는 함수</li></ul>|
+|shouldComponentUpdate(nextProps, nextState)|<ul><li>화면을 `새로 출력해야하는지 판단`하는 함수</li><li>데이터를 비교하는 작업이 포함되므로, `리액트 성능에 영향을 많이 줌`</li><li>`검증 작업`할 때 주로 사용</li><li>forceUpdate를 호출하는 경우 실행되지 않음</li></ul>|
+|getSnapshotBeforeUpdate(prevProps, prevState)|<ul><li>변경된 내용이 버츄얼 DOM에 완료된 후 호출되는 함수</li><li>render 되기 이전에 실행되어 `DOM 정보에 접근할 때 사용`</li></ul>|
+|componentDidUpdate(prevProps, prevState, snapshot)|<ul><li>실제 화면에 출력된 이후 호출되는 함수</li><li>getSnapshotBeforeUpdate에서 반환된 값을 인자로 받고, `DOM 정보를 변경할 때 사용`</li></ul>|
+|componentWillUnmount|<ul><li>컴포넌트가 소멸되기 직전에 호출하는 함수</li><li>컴포넌트에서 사용하는 메모리를 해제하기 위해 주로 사용한다.</li><li>`메모리 누수 현상 방지`</li></ul>|
