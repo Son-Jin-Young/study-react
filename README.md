@@ -76,7 +76,8 @@ MyComponent.defaultProps = {
 export default Mycomponent;
 ```
 
-## 상태관리 - this.state
+## 상태관리
+###this.state
 * 값을 저장하거나 변경할 수 있는 객체
 * `this.state` 를 이용하여 데이터 초기화 및 변경
 * 주의사항
@@ -86,6 +87,25 @@ export default Mycomponent;
     * setState() 함수는 `비동기로 처리`, 이후 연결된 함수의 실행 종료 후 동기화 된다.
 * <span style="color: red;">생성자에서 비동기 함수 호출시, 내부에서 상태를 바꾸는 경우, 콘솔 오류 발생</span>
 
-## 상태관리 - forceUpdate()
+###forceUpdate()
 * this.setState와 동일한 동작을 한다.
 * 단, 리액트 `성능에 제약`이 있으므로 새롭게 뜨는 화면이 아니라면 사용을 `지양`한다.
+
+## 컴포넌트 생명 주기
+* constructor(props)
+    * 최초 생성될 때 한번 실행
+    * `변수` 또는 `상태` 선언
+* render
+    * 데이터가 변경되어 새화면을 그려야 할 때 자동으로 호출
+    * 반환하는 JSX 화면을 그림
+* static getDerivedStateFormProps(props, state)
+    * 주로 `prop으로 전달되는 값을 state로 연동`해 줄 때, 주로 사용
+* componentDidMount
+    * render 함수가 종료된 후 호출되는 함수
+    * 즉 렌더링이 완료된 후 작업을 실행하는 함수
+* shouldComponentUpdate(nextProps, nextState)
+    * 화면을 `새로 출력해야하는지 판단`하는 함수
+    * 데이터를 비교하는 작업이 포함되므로, `리액트 성능에 영향을 많이 줌`
+    * `검증 작업`할 때 주로 사용
+    * forceUpdate를 호출하는 경우 실행되지 않음
+    * (상태관리 - forceUpdate)[###forceUpdate()]
