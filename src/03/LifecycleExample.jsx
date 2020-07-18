@@ -21,8 +21,11 @@ class LifecycleExample extends React.Component {
 
     componentDidMount() {
         console.log('[LC] componentDidMount');
+        // 갱신(forceUpdate) 외 확인
         // this.setState({updated: true});
-        this.forceUpdate();
+
+        // 갱신(forceUpdate) 확인
+        // this.forceUpdate();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -38,7 +41,12 @@ class LifecycleExample extends React.Component {
     }
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log('[LC] shouldComponentUpdate');
-        return false;
+
+        // 갱신(shouldComponentUpdate => true) 확인
+        return true;
+
+        // 갱신(shouldComponentUpdate => false) 확인
+        // return false;
     }
 
     render() {

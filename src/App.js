@@ -70,6 +70,7 @@ class App extends React.Component {
                 <StateExample />
                 <ForceUpdateExample />
                 <MiddleTest112Code />
+                {/* 컴포넌트 소멸 생명주기 확인 */}
                 {this.state.hasDestroyed ? null : <LifecycleExample />}
             </div>
         )
