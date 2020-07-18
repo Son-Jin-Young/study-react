@@ -106,10 +106,12 @@ export default Mycomponent;
 |componentDidUpdate(prevProps, prevState, snapshot)|<ul><li>실제 화면에 출력된 이후 호출되는 함수</li><li>getSnapshotBeforeUpdate에서 반환된 값을 인자로 받고, `DOM 정보를 변경할 때 사용`</li></ul>|
 |componentWillUnmount|<ul><li>컴포넌트가 소멸되기 직전에 호출하는 함수</li><li>컴포넌트에서 사용하는 메모리를 해제하기 위해 주로 사용한다.</li><li>`메모리 누수 현상 방지`</li></ul>|
 
-* 실행확인
-    * 생성: constructor - getDerivedStateFromProps - render - componentDidMount
-    * 갱신(shouldComponentUpdate => true): getDerivedStateFromProps - shouldComponentUpdate - render - getSnapshotBeforeUpdate - componentDidUpdate
-    * 갱신(shouldComponentUpdate => false): getDerivedStateFromProps - shouldComponentUpdate
-    * 갱신(forceUpdate): getDerivedStateFromProps - render - getSnapshotBeforeUpdate - componentDidUpdate
-    * 소멸: componentWillUnmount
+* 생명주기 실행 순서
+|실행방식|순서|
+|--|--|
+|생성|`constructor` - `getDerivedStateFromProps` - `render` - `componentDidMount`|
+|갱신(shouldComponentUpdate => true)|`getDerivedStateFromProps` - `shouldComponentUpdate` - `render` - `getSnapshotBeforeUpdate` - `componentDidUpdate`|
+|갱신(shouldComponentUpdate => false)|`getDerivedStateFromProps` - `shouldComponentUpdate`|
+|갱신(forceUpdate)|`getDerivedStateFromProps` - `render` - `getSnapshotBeforeUpdate` - `componentDidUpdate`|
+|소멸|`componentWillUnmount`|
 
