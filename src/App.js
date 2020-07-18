@@ -11,19 +11,30 @@ import StateExample from './03/StateExample';
 import ForceUpdateExample from './03/ForceUpdateExample';
 import MiddleTest112Code from './03/MiddleTest112Code';
 import LifecycleExample from './03/LifecycleExample';
+import Counter from './03/Counter';
+import NewCounter from './03/NewCounter';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            hasDestroyed: false
-        };
+        this.state = {count: 10};
+        this.resetCount = this.resetCount.bind(this);
+
+        // 컴포넌트 소멸 생명주기 확인
+        // this.state = {
+        //     hasDestroyed: false
+        // };
+    }
+
+    resetCount() {
+        this.setState(({count}) => ({count: count + 10}));
     }
 
     componentDidMount() {
-        this.setState({
-            hasDestroyed: true
-        })
+        // 컴포넌트 소멸 생명주기 확인
+        // this.setState({
+        //     hasDestroyed: true
+        // });
     }
 
     render() {
@@ -72,6 +83,9 @@ class App extends React.Component {
                 <MiddleTest112Code />
                 {/* 컴포넌트 소멸 생명주기 확인 */}
                 {this.state.hasDestroyed ? null : <LifecycleExample />}
+                <div><Counter count={this.state.count} /></div>
+                <div><NewCounter count={this.state.count} /></div>
+                <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
             </div>
         )
     }
