@@ -9,6 +9,7 @@ import DefaultPropsComponent from './03/DefaultPropsComponent';
 import ChildProperty from './03/ChildProperty';
 import StateExample from './03/StateExample';
 import ForceUpdateExample from './03/ForceUpdateExample';
+import MiddleTest112Code from './03/MiddleTest112Code';
 
 class App extends React.Component {
     render() {
@@ -54,6 +55,7 @@ class App extends React.Component {
                 <h1>상태관리</h1>
                 <StateExample />
                 <ForceUpdateExample />
+                <MiddleTest112Code />
             </div>
         )
     }
