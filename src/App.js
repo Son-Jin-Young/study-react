@@ -10,8 +10,22 @@ import ChildProperty from './03/ChildProperty';
 import StateExample from './03/StateExample';
 import ForceUpdateExample from './03/ForceUpdateExample';
 import MiddleTest112Code from './03/MiddleTest112Code';
+import LifecycleExample from './03/LifecycleExample';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            hasDestroyed: false
+        };
+    }
+
+    componentDidMount() {
+        this.setState({
+            hasDestroyed: true
+        })
+    }
+
     render() {
         const array = [1, 2, 3];
         const obj = {name: 'SJY', age: 30};
@@ -56,6 +70,7 @@ class App extends React.Component {
                 <StateExample />
                 <ForceUpdateExample />
                 <MiddleTest112Code />
+                {this.state.hasDestroyed ? null : <LifecycleExample />}
             </div>
         )
     }
